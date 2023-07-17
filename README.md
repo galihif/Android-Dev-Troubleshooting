@@ -1,7 +1,7 @@
 ## Daftar Isi
 - [Gradle Errors](#gradle-errors)
 - [Kotlin Errors](#kotlin-errors)
-...
+
 
 ## Gradle Errors
 
@@ -11,5 +11,4 @@
 - **Solusi**: Tambahkan path lokasi Android SDK ke dalam file `local.properties`.
 - **Referensi**: [Stackoverflow Thread](link)
 
-...
 
