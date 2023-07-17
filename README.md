@@ -1,2 +1,15 @@
-# Android-Dev-Troubleshooting
-Repository ini berisi dokumentasi tentang berbagai error dan bug yang biasa dihadapi saat pengembangan aplikasi Android, bersama dengan solusi yang telah dicoba dan berhasil. Tujuannya adalah untuk menjadi sumber referensi yang dapat membantu memecahkan masalah umum yang ditemui oleh developer Android, baik pemula maupun yang berpengalaman.
+## Daftar Isi
+- [Gradle Errors](#gradle-errors)
+- [Kotlin Errors](#kotlin-errors)
+...
+
+## Gradle Errors
+
+### Error: SDK location not found
+- **Detail Error**: `SDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID_HOME environment variable.`
+- **Penyebab**: Gradle tidak bisa menemukan Android SDK karena belum ditentukan lokasinya.
+- **Solusi**: Tambahkan path lokasi Android SDK ke dalam file `local.properties`.
+- **Referensi**: [Stackoverflow Thread](link)
+
+...
+
