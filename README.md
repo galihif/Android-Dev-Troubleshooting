@@ -1,14 +1,25 @@
 ## Daftar Isi
-- [Gradle Errors](#gradle-errors)
-- [Kotlin Errors](#kotlin-errors)
+- [Gradle](#gradle)
+- [Kotlin](#kotlin-errors)
 
 
-## Gradle Errors
+## Gradle
 
-### Error: SDK location not found
-- **Detail Error**: `SDK location not found. Define location with sdk.dir in the local.properties file or with an ANDROID_HOME environment variable.`
-- **Penyebab**: Gradle tidak bisa menemukan Android SDK karena belum ditentukan lokasinya.
-- **Solusi**: Tambahkan path lokasi Android SDK ke dalam file `local.properties`.
-- **Referensi**: [Stackoverflow Thread](link)
+### Error: Execution failed for task ':app:kaptGenerateStubsDebugKotlin'
+**Detail**:
+```
+Execution failed for task ':app:kaptGenerateStubsDebugKotlin'.
+> 'compileDebugJavaWithJavac' task (current target is 1.8) and 'kaptGenerateStubsDebugKotlin' task (current target is 17) jvm target compatibility should be set to the same Java version.
+  Consider using JVM toolchain: https://kotl.in/gradle/jvm/toolchain
+```
+
+**Deskripsi**:
+
+
+**Solusi**: 
+Ganti `jvmTarget` dan `sourceCompatibility` `targetCompatibility` ke Java 17
+
+**Referensi**: 
+[Stackoverflow Thread](https://stackoverflow.com/questions/69079963/how-to-set-compilejava-task-11-and-compilekotlin-task-1-8-jvm-target-com)
 
 
