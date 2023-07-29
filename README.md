@@ -1,7 +1,23 @@
 ## Daftar Isi
+- [Android Studio](#android-studio)
 - [Gradle](#gradle)
 - [Jetpack Compose](#jetpack-compose)
 
+## Android Studio
+
+### Change Android Studio Project and Package name
+
+- **Change App/Project Name** :
+  - Go to `settings.gradle` and rename `rootProject.name`
+  - Go to `strings.xml` and rename `@string/app_name`
+  - Change Theme Name in `themes.xml`
+  - `Gradle Sync`, Clean and rebuild project
+- **Change Package Name** :
+  - Go to `build.gradle` module level, rename `namespace` and `applicationId`
+  - Run gradle `sync`
+  - In the project tab, Tree Appearance > uncheck `Compact Middle Packages`
+  - Right click on package name folder > Refactor > Rename > Do Refactor
+  - Clean and rebuild project
 
 ## Gradle
 
