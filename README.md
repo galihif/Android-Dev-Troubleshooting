@@ -18,6 +18,8 @@
   - In the project tab, Tree Appearance > uncheck `Compact Middle Packages`
   - Right click on package name folder > Refactor > Rename > Do Refactor
   - Clean and rebuild project
+- **Reference** :
+[Stackoverflow Thread](https://stackoverflow.com/questions/16804093/rename-package-in-android-studio/29092698#29092698)
 
 ## Gradle
 
