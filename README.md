@@ -69,5 +69,30 @@ Row(
 - **Reference**: 
 [Stackoverflow Thread](https://stackoverflow.com/questions/67677125/fill-height-for-child-in-row)
 
+### Navigation : Popbackstack multiple screens
 
+- **Issue**:
 
+In a navigation flow where there are multiple screens (e.g., Screen A > Screen B > Screen C), there may be situations where you want to pop multiple screens off the back stack at once. For example, you might want to navigate directly from Screen C back to Screen A, skipping Screen B. Using the default `NavController.popBackStack()` method will only pop one screen at a time, which may not be sufficient for your use case.
+
+- **Solution**:
+  
+A solution to this problem is using the overloaded `NavController.popBackStack(route: String, inclusive: Boolean)` method, which pops all destinations up to a specified one.
+
+Here's how you can use this function in your code:
+
+```
+val navController = rememberNavController()
+Button(onClick = {
+    navController.popBackStack(route = "A", inclusive = false)
+}) {
+    Text(text = "Back to Screen A")
+}
+```
+
+This code will pop the back stack until it reaches Screen A, but Screen A will remain in the stack, i.e., it will be the current destination after the operation.
+
+Remember, `popBackStack()` returns a boolean indicating whether it successfully popped the back stack. You should handle the case where it returns `false`, which indicates that it could not find a destination associated with the given `route` in the back stack.
+
+- **Reference**: 
+[Stackoverflow Thread](https://stackoverflow.com/questions/69415996/jetpack-compose-navcontroller-popbackstack-multiple-pages)
