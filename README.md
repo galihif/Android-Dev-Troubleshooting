@@ -91,6 +91,8 @@ Button(onClick = {
 ```
 
 This code will pop the back stack until it reaches Screen A, but Screen A will remain in the stack, i.e., it will be the current destination after the operation.
+If `inclusive` is set to **false** (which is the default), then all destinations up to but not including the one associated with the given route (in this case A) will be popped.
+If `inclusive` is set to **true**, then all destinations up to and including the one associated with the given route will be popped.
 
 Remember, `popBackStack()` returns a boolean indicating whether it successfully popped the back stack. You should handle the case where it returns `false`, which indicates that it could not find a destination associated with the given `route` in the back stack.
 
