@@ -69,6 +69,8 @@ Row(
 - **Reference**: 
 [Stackoverflow Thread](https://stackoverflow.com/questions/67677125/fill-height-for-child-in-row)
 
+---
+
 ### Navigation : Popbackstack multiple screens
 
 - **Issue**:
@@ -99,6 +101,8 @@ Remember, `popBackStack()` returns a boolean indicating whether it successfully 
 - **Reference**: 
 [Stackoverflow Thread](https://stackoverflow.com/questions/69415996/jetpack-compose-navcontroller-popbackstack-multiple-pages)
 
+---
+
 ### Recomposition : Updating Value Not Reflected in Composable
 
 - **Issue** :
@@ -106,6 +110,7 @@ Remember, `popBackStack()` returns a boolean indicating whether it successfully 
 In a Jetpack Compose project, a value updated in the ViewModel might not be reflected in a specific composable. Despite the value being changed and observed within the ViewModel, the composable may still show the initial or default value. This can lead to inconsistencies in the UI where the displayed information does not match the actual data state.
 
 - **Solution** :
+
 A solution to this problem is using the `key` function in Jetpack Compose, which can be used to force recomposition of a specific composable based on a particular value. Whenever the value passed to the `key` function changes, the composable within the key block will recompose, ensuring that the UI correctly reflects the updated value.
 
 Here's how you can use this approach in your code:
@@ -126,3 +131,5 @@ fun MyComposable(user: User) {
 By leveraging the key function, developers can ensure that the UI updates in response to specific data changes, resolving the issue where certain composables were not reflecting the updated value when expected. This leads to a more predictable and responsive user experience.
 
 - **References** : ChatGPT4
+
+---
