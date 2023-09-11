@@ -133,3 +133,31 @@ By leveraging the key function, developers can ensure that the UI updates in res
 - **References** : ChatGPT4
 
 ---
+
+### Dialog : Change Dialog Background Overlay Color
+
+- **Issue** :
+
+In compose dialog the overlay is just black with some opacity, I want to change the color with other color not just black
+
+- **Solution** :
+
+In **DialogProperties** set the `usePlatformDefaultWidth` to `false`, it will make the dialog size is full screen and not limited to platform default width. Wrap your content with **Box** and set its modifier to `fillMaxSize()` and the `background()` with the color you wanted. 
+
+```
+    Dialog(
+        onDismissRequest = { /*TODO*/ },
+        properties = DialogProperties(usePlatformDefaultWidth = false)
+    ) {
+        Box(
+            modifier = Modifier
+                .fillMaxSize()
+                .background(CloveUITheme.colors.primary30.copy(alpha = 0.4f))
+        ) {
+            YourDialogContent()
+        }
+    }
+```
+- **References** : ChatGPT
+
+---
