@@ -161,3 +161,34 @@ In **DialogProperties** set the `usePlatformDefaultWidth` to `false`, it will ma
 - **References** : ChatGPT
 
 ---
+
+### Column : Scroll to bottom on a vertically scrollable column and detect if it scrolled to the end
+
+- **Issue** : 
+
+In compose column there's a content that too large and it needs a vertical scroll. I want to make an animate to bottom of the column and check if it already scrolled to the bottom.
+
+- **Solution** :
+
+Using `scrollState.maxValue` to get the max position of the column and `scrollState.value` to get the current position of the column.
+
+Check if already scrolled to the end:
+
+```
+val endReached by remember {
+    derivedStateOf {
+        scrollState.value == scrollState.maxValue
+    }
+}
+```
+
+Scroll to the bottom of the column:
+
+```
+coroutineScope.launch {
+    scrollState.animateScrollTo(scrollState.maxValue)
+}
+```
+
+- **References** :
+[Stackoverflow Thread](https://stackoverflow.com/questions/70329412/jetpack-compose-how-to-listen-column-scrolled-to-end)
