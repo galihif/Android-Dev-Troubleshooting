@@ -202,6 +202,7 @@ coroutineScope.launch {
 In compose app i want to set the specific screen to unable to screen captured by user
 
 - **Solution** :
+  
 Get the `activity` in your composable function and set the flags to `WindowManager.LayoutParams.FLAG_SECURE`
 
 ```
