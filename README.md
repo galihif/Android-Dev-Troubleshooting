@@ -192,3 +192,38 @@ coroutineScope.launch {
 
 - **References** :
 [Stackoverflow Thread](https://stackoverflow.com/questions/70329412/jetpack-compose-how-to-listen-column-scrolled-to-end)
+
+---
+
+### Jetpack compose: prevent screenshot on screen
+
+- **Issue** : 
+
+In compose app i want to set the specific screen to unable to screen captured by user
+
+- **Solution** :
+Get the `activity` in your composable function and set the flags to `WindowManager.LayoutParams.FLAG_SECURE`
+
+```
+    val activity = LocalContext.current as Activity
+    activity.window.setFlags(
+        WindowManager.LayoutParams.FLAG_SECURE,
+        WindowManager.LayoutParams.FLAG_SECURE
+    )
+```
+
+Because compose is a single activity app, you have to clear the flags after the screen changed with `DisposableEffect`
+
+```
+    DisposableEffect(key1 = Unit) {
+        onDispose {
+            activity.window.clearFlags(WindowManager.LayoutParams.FLAG_SECURE)
+        }
+    }
+```
+
+
+
+- **References** :
+[Youtube video (XML)](https://www.youtube.com/watch?v=wlBTPtfCkok)
+
